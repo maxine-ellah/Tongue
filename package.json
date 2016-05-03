@@ -4,12 +4,11 @@
   "description": "language learning app",
   "main": "index.js",
   "scripts": {
-    "start": "budo . -d --serve bundle.js --live",
-    "build": "browserify . -o bundle.js -g uglifyify",
-    "test": "browserify test.js | smokestack | tap-spec",
-    "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
-    "push": "gh-pages -d dist",
-    "deploy": "npm run build && npm run dist && npm run push"
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "nodemon ./server.js",
+    "build": "browserify -t hbsfy ./src/index.js -g uglifyify > ./client/app.js",
+    "serve": "node-dev server.js",
+    "watch": "watchify -t hbsfy ./src/index.js -o ./client/app.js -dv"
   },
   "browserify": {
     "transform": []
@@ -25,8 +24,12 @@
   },
   "homepage": "https://github.com/maxine-ellah/tongue",
   "dependencies": {
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
     "handlebars": "^4.0.5",
+    "jquery": "^2.2.3",
     "knex": "^0.10.0",
+    "node-dev": "^3.1.1",
     "pg": "^4.5.5"
   },
   "devDependencies": {
