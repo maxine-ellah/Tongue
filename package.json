@@ -1,26 +1,43 @@
 {
-  "name": "language-app",
-  "version": "0.0.0",
-  "private": true,
+  "name": "tongue",
+  "version": "1.0.0",
+  "description": "language learning app",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "budo . -d --serve bundle.js --live",
+    "build": "browserify . -o bundle.js -g uglifyify",
+    "test": "browserify test.js | smokestack | tap-spec",
+    "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
+    "push": "gh-pages -d dist",
+    "deploy": "npm run build && npm run dist && npm run push"
   },
+  "browserify": {
+    "transform": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxine-ellah/tongue"
+  },
+  "author": "maxine-ellah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maxine-ellah/tongue/issues"
+  },
+  "homepage": "https://github.com/maxine-ellah/tongue",
   "dependencies": {
-    "body-parser": "~1.13.2",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-    "express": "~4.13.1",
     "handlebars": "^4.0.5",
-    "jade": "~1.11.0",
     "knex": "^0.10.0",
-    "morgan": "~1.6.1",
-    "pg": "^4.5.5",
-    "serve-favicon": "~2.3.0"
+    "pg": "^4.5.5"
   },
   "devDependencies": {
+    "browserify": "^10.0.0",
+    "budo": "^4.0.0",
+    "gh-pages": "^0.3.0",
+    "smokestack": "^3.3.0",
     "supertest": "^1.2.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1",
-    "watchify": "^3.7.0"
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.1.0"
   }
 }
