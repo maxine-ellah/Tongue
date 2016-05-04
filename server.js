@@ -6,23 +6,25 @@ var dotenv = require('dotenv')
 var $ = require('jquery')
 var cloudinary = require('cloudinary')
 var fileUpload = require('express-fileupload');
-// var knex = require('knex')
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development'
-
+var env = process.env.NODE_ENV || 'development' // string
+var knexConfig = require('./knexfile'); //big object
+var knexDbConfig = knexConfig[env] //small object
+var knexGenerator = require('knex') //function
+global.knex = knexGenerator(knexDbConfig)
+console.log("anything!!")
+app.use(express.static('client'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
 
-var knex = require('knex')({
-  client: 'pg',
-  connection: process.env.DATABASE_URL || {
-    database: 'tongue_dev'
-  },
-  useNullAsDefault: true
-})
+
+
+// app.get('/', function (req, res) {
+//   res.send('index');
+// });
 
 app.get('/words', function(req, res) {
   knex('words')
