@@ -6,6 +6,7 @@ var dotenv = require('dotenv')
 var $ = require('jquery')
 var cloudinary = require('cloudinary')
 var fileUpload = require('express-fileupload');
+var knex = require('knex')
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 

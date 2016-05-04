@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
     "start": "nodemon ./server.js",
-    "build": "browserify -t hbsfy ./src/index.js -g uglifyify > ./client/app.js",
+    "build": "browserify -t hbsfy ./src/index.js -g uglifyify > ./client/bundle.js",
     "serve": "node-dev server.js",
-    "watch": "watchify -t hbsfy ./src/index.js -o ./client/app.js -dv"
+    "watch": "watchify -t hbsfy ./src/index.js -o ./client/bundle.js -dv"
   },
   "browserify": {
     "transform": []
