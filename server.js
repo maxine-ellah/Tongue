@@ -6,7 +6,7 @@ var dotenv = require('dotenv')
 var $ = require('jquery')
 var cloudinary = require('cloudinary')
 var fileUpload = require('express-fileupload');
-var knex = require('knex')
+// var knex = require('knex')
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
@@ -15,6 +15,14 @@ app.set('view engine', 'hbs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
+
+var knex = require('knex')({
+  client: 'pg',
+  connection: process.env.DATABASE_URL || {
+    database: 'tongue_dev'
+  },
+  useNullAsDefault: true
+})
 
 app.get('/words', function(req, res) {
   knex('words')
