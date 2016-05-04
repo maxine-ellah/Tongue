@@ -16,6 +16,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
 
+app.get('/words', function(req, res) {
+  knex('words')
+    .select()
+  .then(function(data) {
+    res.json(data)
+  })
+})
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
