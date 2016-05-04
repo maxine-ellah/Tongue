@@ -25,9 +25,9 @@ app.get('/', function (req, res) {
 
 app.get('/words', function(req, res) {
   knex('words')
-    .select()
+    .select('*')
   .then(function(data) {
-    res.json(JSON.parse(data))
+    res.json(data)
     console.log('this is data: ', data)
   })
 })
