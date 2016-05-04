@@ -2,6 +2,12 @@ main {
   text-align: center;
 }
 
+div.content {
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center }
+
 body {
   background-color: #F08080;
 }
