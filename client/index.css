@@ -3,10 +3,10 @@ main {
 }
 
 div.content {
-  height: 10em;
-  display: flex;
-  align-items: center;
-  justify-content: center }
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
 
 body {
   background-color: #F08080;

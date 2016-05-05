@@ -4,8 +4,6 @@
   <p>{{this.word}}</p>
 </div>
 
-  <br>
-
 <div class="image">
   <img src="{{this.image_url}}">
 </div>
@@ -13,10 +11,10 @@
   <br>
 
 <div class="sound">
-  <audio controls>
+  <audio controls autoplay>
   <source src="{{this.sound_url}}" type="audio/mpeg">
   Your browser does not support the audio tag.
   </audio>
 </div>
-  
+
 {{/each}}
