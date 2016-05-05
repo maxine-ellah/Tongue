@@ -24,11 +24,12 @@ app.get('/', function (req, res) {
 });
 
 app.get('/words', function(req, res) {
-  var randomId = Math.floor((Math.random() * 100) +1)
+  var randomId = Math.floor((Math.random() * 20) +1)
+  console.log('this is randomId: ', randomId)
   knex('words')
     .where('id', randomId)
   .then(function(data) {
-    res.json(knexdata)
+    res.json(data)
     console.log('this is data: ', data)
   })
 })

@@ -5,11 +5,22 @@ var request = require('superagent')
 // $('document').ready(function(){
 //   $('#content').append(singlePage({ word: res.body }))
 // })
-console.log(singlePage)
 
-request
-  .get('http://localhost:3000/words')
-  .end(function(err, res) {
-    $('#content').append(singlePage({ words: JSON.parse(res.text) }))
-     console.log('this is res', JSON.parse(res.text))
-  })
+$('button#nextWord').click(function() {
+
+  request
+    .get('http://localhost:3000/words')
+    .end(function(err, res) {
+    var viewWithData =  singlePage({ words: JSON.parse(res.text) })
+    var firstTime = true
+      if (firstTime) {
+      $('#content').append(viewWithData)
+       firstTime = false
+     } else {
+       $('#content').html(viewWithData)
+     }
+
+    })
+    document.getElementById("#content").reset()
+    return false
+})
