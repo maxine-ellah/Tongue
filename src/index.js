@@ -3,8 +3,7 @@ var $ = require('jquery')
 var request = require('superagent')
 
 // $('document').ready(function(){
-//   $('#content').append(singlePage({ word: res.body }))
-// })
+
 var firstTime = true
 
 $('button#nextWord').click(function() {
@@ -23,8 +22,6 @@ $('button#nextWord').click(function() {
       }
 
     })
-    // document.getElementById("#content").reset()
-    // return false
 })
 
 
