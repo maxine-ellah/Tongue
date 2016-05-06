@@ -19,7 +19,7 @@ exports.seed = function(knex, Promise) {
     knex('words').insert({id: 12, word: 'Orchard'}),
     knex('words').insert({id: 13, word: 'Family'}),
     knex('words').insert({id: 14, word: 'Student'}),
-    knex('words').insert({id: 15, word: 'Cabbage', image_url: 'http://res.cloudinary.com/ddoenlcwx/image/upload/v1462426170/cabbage_xrgz2t.png', sound_url: 'http://res.cloudinary.com/ddoenlcwx/video/upload/v1462427947/Cabbage-test_st0rn8.m4a'}),
+    knex('words').insert({id: 15, word: 'Cabbage', respelling: 'kab-ij', image_url: 'http://res.cloudinary.com/ddoenlcwx/image/upload/v1462426170/cabbage_xrgz2t.png', sound_url: 'http://res.cloudinary.com/ddoenlcwx/video/upload/v1462427947/Cabbage-test_st0rn8.m4a'}),
     knex('words').insert({id: 16, word: 'Rhubarb'}),
     knex('words').insert({id: 17, word: 'Problem'}),
     knex('words').insert({id: 18, word: 'Hand', image_url: 'http://res.cloudinary.com/ddoenlcwx/image/upload/v1462426161/hand_qplean.png'}),
