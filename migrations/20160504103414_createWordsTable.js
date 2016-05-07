@@ -6,12 +6,12 @@ exports.up = function(knex, Promise) {
        table.string('respelling')
        table.string('image_url')
        table.string('sound_url')
-       console.log('words table was created')
+       console.log('words table was created!!')
      })
  };
 
  exports.down = function(knex, Promise) {
    return knex.schema.dropTableIfExists('words').then(function(){
-     console.log('words table was dropped')
+     console.log('words table was dropped!!')
    })
  };
