@@ -4,7 +4,8 @@ var path = require('path')
 var bodyParser = require('body-parser')
 var dotenv = require('dotenv')
 var cloudinary = require('cloudinary')
-var fileUpload = require('express-fileupload');
+var passport = require('passport')
+var FacebookStrategy = require('passport-facebook').Strategy;
 
 var env = process.env.NODE_ENV || 'development' // string
 var knexConfig = require('./knexfile'); //big object
