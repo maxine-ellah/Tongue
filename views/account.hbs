@@ -6,18 +6,12 @@
 
   <body>
 
-    <h1>[app name]</h1>
-
-    <div id='content' class='content'>
-    </div>
-
-    <div id='button'>
-      <button id="nextWord">Next Word</button>
-    </div>
-
-    <a href="/auth/facebook">Login with Facebook</a>
+    <h1>You're logged in {{user.name}}!</h1>
+    <p>What do you want to do?</p>
     <br>
-    <a href="/logout">Logout</a>
+    <a href="/">Practice pronounciation, yeeeeahhh!</a>
+    <br>
+    <a href="/logout">Logout, yeeeeahhh!</a>
 
     <script id="word-template" type="text/x-handlebars-template"></script>
     <script type='text/javascript' src='/bundle.js'></script>

@@ -23,9 +23,3 @@ $('button#nextWord').click(function() {
 
     })
 })
-
-
-// assumed :
-// 1. we've reaved line 18
-// 2. the viewWithData is correct
-// 3. the append did / didn't happen?
