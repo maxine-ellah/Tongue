@@ -1,12 +1,8 @@
 {{#each words}}
 
-{{#if user}}
-<div>Hello{{user.name}}</div>
-{{/if}}
-
 <div class="word">
-  <p style="font-family:courier;">{{this.word}}</p>
-  <p style="italic">{{this.respelling}}</p>
+  <p style="font-family:courier;"><strong>{{this.word}}</strong></p>
+  <p><i>{{this.respelling}}</i></p>
 </div>
 
 <div class="image">

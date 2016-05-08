@@ -21,7 +21,6 @@ passport.use(new FacebookStrategy({
   callbackURL: "http://localhost:3000/auth/facebook/callback"
 },
   function(accessToken, refreshToken, profile, callback) {
-    console.log('this is the profile object(?): ', profile)
     knex('users').select('*').where({
       facebook_id: profile.id
     }).then(function (resp) {
@@ -30,7 +29,7 @@ passport.use(new FacebookStrategy({
           facebook_id: profile.id,
           name: profile.displayName
         }
-
+// set user in session
         knex('users').insert(user).then(function (resp) {
           callback(null, user)
         })
@@ -60,8 +59,13 @@ passport.deserializeUser(function(obj, cb) {
 })
 
 //routes
+// app.get('/', function (req, res) {
+//   res.redirect('/home')
+// })
+
 app.get('/', function (req, res) {
-  res.render('index', { user: req.user });
+  console.log('req.session.user', req.session.user)
+  res.render('index', { user: req.session.user });
 });
 
 //// redirect authentication requests to facebook
@@ -70,10 +74,11 @@ app.get('/auth/facebook', passport.authenticate('facebook'))
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function (req, res) {
+    console.log('req.user', req.user)
+    req.session.user = req.user
     res.redirect('/')
 })
-//write a get request which has a knex query to select the user in the user table and res.json the response.
-//then render it in a new request in index.js
+
 app.get('/logout', function (req, res) {
   req.logout()
   res.redirect('/')
@@ -81,12 +86,12 @@ app.get('/logout', function (req, res) {
 
 app.get('/words', function(req, res) {
   var randomId = Math.floor((Math.random() * 20) +1)
-  console.log('this is randomId: ', randomId)
+  // console.log('this is randomId: ', randomId)
   knex('words')
     .where('id', randomId)
     .then(function(data) {
     res.json(data)
-    console.log('this is data: ', data)
+    // console.log('this is data: ', data)
   })
 })
 
