@@ -8,6 +8,12 @@ var session = require('express-session')
 var passport = require('passport')
 var FacebookStrategy = require('passport-facebook').Strategy;
 var port = process.env.PORT || 3000
+
+var urlAndPort = (process.env.NODE_ENV=='production') ?
+  "http://tongue123.herokuapp.com" :
+  "http://localhost:3000"
+// if we're in production, use the heroku url + port, otherwise use the localhost 3000 one
+
 dotenv.load()
 
 var env = process.env.NODE_ENV || 'development' // string
@@ -19,7 +25,9 @@ global.knex = knexGenerator(knexDbConfig)
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_CLIENT_ID,
   clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/facebook/callback"
+  callbackURL: urlAndPort + "/auth/facebook/callback"
+
+  // callbackURL: "http://localhost:3000/auth/facebook/callback"
 },
   function(accessToken, refreshToken, profile, callback) {
     knex('users').select('*').where({
