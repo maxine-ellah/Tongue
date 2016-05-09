@@ -75,8 +75,8 @@ app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function (req, res) {
     console.log('req.user', req.user)
-    req.session.user = req.user
-    res.render('account', { user: req.session.user })
+    // req.session.user = req.user
+    res.render('account', { user: req.user })
 })
 
 app.get('/words', function(req, res) {

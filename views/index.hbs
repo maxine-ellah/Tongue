@@ -1,18 +1,20 @@
 <html>
   <head>
     <title>tongue</title>
+    <link href="normalize.css" rel="stylesheet"/>
+    <link href="skeleton.css" rel="stylesheet"/>
     <link href="index.css" rel="stylesheet"/>
   </head>
 
   <body>
-
+<div class='container six columns offset-by-three'>
     <h1>[app name]</h1>
 
     {{#if user}}
     <div>Hello {{user.name}}!</div>
     {{/if}}
 
-    <div id='content' class='content'>
+    <div id='content'>
     </div>
 
     <div id='button'>
@@ -27,7 +29,7 @@
     <br>
 
     <a href="/logout">Logout</a>
-
+</div>
     <script id="word-template" type="text/x-handlebars-template"></script>
     <script type='text/javascript' src='/bundle.js'></script>
   </body>
