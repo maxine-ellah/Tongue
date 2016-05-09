@@ -7,6 +7,7 @@ var cloudinary = require('cloudinary')
 var session = require('express-session')
 var passport = require('passport')
 var FacebookStrategy = require('passport-facebook').Strategy;
+var port = process.env.PORT || 3000
 dotenv.load()
 
 var env = process.env.NODE_ENV || 'development' // string
@@ -96,6 +97,6 @@ app.get('/logout', function (req, res) {
   res.redirect('/')
 })
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Example app listening on port 3000!');
 });
