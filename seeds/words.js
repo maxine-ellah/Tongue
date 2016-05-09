@@ -23,7 +23,7 @@ exports.seed = function(knex, Promise) {
     knex('words').insert({id: 16, word: 'Rhubarb', respelling: '[roo-bahrb]', sound_url: 'http://res.cloudinary.com/ddoenlcwx/video/upload/v1462771770/Rhubarb_edm7qy.mp3'}),
     knex('words').insert({id: 17, word: 'Problem', respelling: '[prob-luh m]', sound_url: 'http://res.cloudinary.com/ddoenlcwx/video/upload/v1462771776/Problem_vx8yju.mp3'}),
     knex('words').insert({id: 18, word: 'Hand', respelling: '[hand]', image_url: 'http://res.cloudinary.com/ddoenlcwx/image/upload/v1462426161/hand_qplean.png', sound_url: 'http://res.cloudinary.com/ddoenlcwx/video/upload/v1462771783/Hand_oiyifg.mp3'}),
-    knex('words').insert({id: 19, word: 'Place', respelling: '[pleys]', sound_url: 'http://res.cloudinary.com/ddoenlcwx/video/upload/v1462771969/Place_ezi379.mp3'}),
-    knex('words').insert({id: 20, word: 'Bread', respelling: '[bred]', sound_url: 'http://res.cloudinary.com/ddoenlcwx/video/upload/v1462771731/Bread_epln9e.mp3'})
+    knex('words').insert({id: 19, word: 'Place', respelling: '[pleys]', sound_url: 'http://res.cloudinary.com/ddoenlcwx/video/upload/v1462773156/Place_qys0zl.mp3'}),
+    knex('words').insert({id: 20, word: 'Bread', respelling: '[bred]', sound_url: 'http://res.cloudinary.com/ddoenlcwx/video/upload/v1462773171/Bread_bpgpie.mp3'})
   );
 };
