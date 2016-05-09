@@ -4,6 +4,16 @@ var request = require('superagent')
 
 // $('document').ready(function(){
 
+// try adding request to handle
+  // request
+  //   .get('http://localhost:3000/auth/facebook/callback')
+  //   .end(function(err, res) {
+  //
+  //   })
+
+
+
+
 var firstTime = true
 
 $('button#nextWord').click(function() {
