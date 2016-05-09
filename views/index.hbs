@@ -9,7 +9,7 @@
     <h1>[app name]</h1>
 
     {{#if user}}
-    <div>Hello {{user.name}}</div>
+    <div>Hello {{user.name}}!</div>
     {{/if}}
 
     <div id='content' class='content'>
@@ -19,8 +19,13 @@
       <button id="nextWord">Next Word</button>
     </div>
 
-    <a href="/auth/facebook">Login with Facebook</a>
     <br>
+
+    <a href="/auth/facebook">Login with Facebook</a>
+
+    <br>
+    <br>
+
     <a href="/logout">Logout</a>
 
     <script id="word-template" type="text/x-handlebars-template"></script>

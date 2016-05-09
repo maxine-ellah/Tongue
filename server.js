@@ -64,8 +64,8 @@ passport.deserializeUser(function(obj, cb) {
 // })
 
 app.get('/', function (req, res) {
-  console.log('req.session.user', req.session.user)
-  res.render('index', { user: req.session.user });
+  console.log('req.session.user', req.session.user, 'req.user', req.user)
+  res.render('index', { user: req.user });
 });
 
 //// redirect authentication requests to facebook
@@ -76,12 +76,7 @@ app.get('/auth/facebook/callback',
   function (req, res) {
     console.log('req.user', req.user)
     req.session.user = req.user
-    res.redirect('/')
-})
-
-app.get('/logout', function (req, res) {
-  req.logout()
-  res.redirect('/')
+    res.render('account', { user: req.session.user })
 })
 
 app.get('/words', function(req, res) {
@@ -93,6 +88,12 @@ app.get('/words', function(req, res) {
     res.json(data)
     // console.log('this is data: ', data)
   })
+})
+
+app.get('/logout', function (req, res) {
+  console.log('req.logout', req.logout)
+  req.logout()
+  res.redirect('/')
 })
 
 app.listen(3000, function () {
