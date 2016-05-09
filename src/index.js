@@ -10,7 +10,7 @@ var firstTime = true
 $('button#nextWord').click(function() {
 
   request
-    .get('http://localhost:3000/words')
+    .get('/words')
     .end(function(err, res) {
       var viewWithData = singlePage({ words: JSON.parse(res.text) })
 
