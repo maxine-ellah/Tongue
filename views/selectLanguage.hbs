@@ -10,12 +10,15 @@
 
     <div class='container six columns offset-by-three'>
     <h1>You're logged in {{user.name}}!</h1>
-    <p>What do you want to do?</p>
+    <p>What language do you want to practice?</p>
     <br>
-    <a href="/"><b>Practice pronounciation, yeeeeahhh!</b></a>
+    <!-- <a href="/"><b>Practice pronounciation, yeeeeahhh!</b></a> -->
+    <button id="english">English</button>
     <br>
     <br>
-    <a href="/logout"><b>Logout, yeeeeahhh!</b></a>
+    <!-- <a href="/logout"><b>Logout, yeeeeahhh!</b></a> -->
+    <button id="french">French</button>
+    <div id='content'></div>
     </div>
 
     <script id="word-template" type="text/x-handlebars-template"></script>

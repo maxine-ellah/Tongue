@@ -3,6 +3,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTableIfNotExists('words', function(table){
        table.increments('id')
        table.string('word')
+       table.string('lang')
        table.string('respelling')
        table.string('image_url')
        table.string('sound_url')
