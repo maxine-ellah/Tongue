@@ -5,38 +5,27 @@ var request = require('superagent')
 
 // $('document').ready(function(){
 var firstTime = true
-// var language = 'english'
+var language = 'english'
 
-// function selectFrench() {
-//   request
-//     .get()
-//   $('button#french').click(function(){
-//     getWords(french)
-//
-//     $('button#nextWord').click(function() {
-//       getWords()
-//     })
-//   })
-// }
-//
-// function selectEnglish() {
-//   request
-//   $('button#english').click(function(){
-//     getWords(english)
-//
-//     $('button#nextWord').click(function() {
-//       getWords(english)
-//     })
-//   })
-// }
 var words = []
 
 $('button#french').click(function(){
-    getWords('french')
+  //render view singlePage with french data in it
+  // $('button#nextWord').click(function() {
+  language = 'french'
+      getWords('french')
+  // })
 })
 
 $('button#english').click(function(){
-    getWords('english')
+  //render view singlePage with english data in it
+  // $('button#nextWord').click(function() {
+      getWords('english')
+  // })
+})
+
+$('#nextWord').click(function() {
+  getWords(language)
 })
 
 function getWords(language) {
@@ -46,7 +35,10 @@ function getWords(language) {
       var viewWithData = singlePage({ words: JSON.parse(res.text) })
       if (firstTime) {
         console.log("i made it here!")
-        $('#content').append(viewWithData)
+
+        $('#content').html(viewWithData)
+        $("#languageBtns").hide()
+        $('#nextWord').show()
         firstTime = false
       } else {
         $('#content').html(viewWithData)

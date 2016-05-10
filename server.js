@@ -85,7 +85,7 @@ app.get('/auth/facebook/callback',
   function (req, res) {
     console.log('req.user', req.user)
     // req.session.user = req.user
-    res.render('account', { user: req.user })
+    res.render('index', { user: req.user })
 })
 
 app.get('/words', function(req, res) {
@@ -100,23 +100,6 @@ app.get('/words', function(req, res) {
     console.log('this is data: ', data)
   })
 })
-
-
-//app.get words/english and app.get words/french
-//and have different knex queries which get the words from different tables
-//or different seeds??
-
-
-// app.get('/words/french', function(req, res) {
-//   var randomId = Math.floor((Math.random() * 20) +1)
-//   // console.log('this is randomId: ', randomId)
-//   knex('words')
-//     .where('id', randomId)
-//     .then(function(data) {
-//     res.json(data)
-//     // console.log('this is data: ', data)
-//   })
-// })
 
 
 app.get('/logout', function (req, res) {

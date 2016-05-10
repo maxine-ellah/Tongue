@@ -24,6 +24,7 @@ body {
 #nextWord {
   margin-top: 20px;
   background-color: white;
+  display: none;
 }
 #nextWord:hover {
 background-color: white;
