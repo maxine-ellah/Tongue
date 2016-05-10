@@ -1,4 +1,5 @@
 var singlePage = require('../views/singlePage.hbs')
+var homePage = require('../views/index.hbs')
 var $ = require('jquery')
 var request = require('superagent')
 
@@ -43,7 +44,6 @@ function getWords(language) {
     .get('/words?language=' + language)
     .end(function(err, res) {
       var viewWithData = singlePage({ words: JSON.parse(res.text) })
-      console.log('viewWithData: ', viewWithData, 'res: ', res)
       if (firstTime) {
         console.log("i made it here!")
         $('#content').append(viewWithData)
