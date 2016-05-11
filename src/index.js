@@ -9,19 +9,13 @@ var language = 'english'
 
 var words = []
 
-$('button#french').click(function(){
-  //render view singlePage with french data in it
-  // $('button#nextWord').click(function() {
-  language = 'french'
-      getWords('french')
-  // })
+$('button#english').click(function(){
+  getWords(language)
 })
 
-$('button#english').click(function(){
-  //render view singlePage with english data in it
-  // $('button#nextWord').click(function() {
-      getWords('english')
-  // })
+$('button#french').click(function(){
+  language = 'french'
+  getWords('french')
 })
 
 $('#nextWord').click(function() {
@@ -33,15 +27,9 @@ function getWords(language) {
     .get('/words?language=' + language)
     .end(function(err, res) {
       var viewWithData = singlePage({ words: JSON.parse(res.text) })
-      if (firstTime) {
-        console.log("i made it here!")
 
-        $('#content').html(viewWithData)
-        $("#languageBtns").hide()
-        $('#nextWord').show()
-        firstTime = false
-      } else {
-        $('#content').html(viewWithData)
-      }
+      $('#content').html(viewWithData)
+      $("#languageBtns").hide()
+      $('#nextWord').show()
     })
 }

@@ -89,7 +89,7 @@ app.get('/auth/facebook/callback',
 })
 
 app.get('/words', function(req, res) {
-  console.log('req.query: ', req.query)
+  // console.log('req.query: ', req.query)
   var language = req.query.language
   knex('words')
     .where('lang', language)
