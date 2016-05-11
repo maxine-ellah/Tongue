@@ -24,17 +24,8 @@ body {
 #nextWord {
   margin-top: 20px;
   background-color: white;
+  display: none;
 }
 #nextWord:hover {
 background-color: white;
 }
-
-/*width: 300px;
-  height: 100px;
-  padding: 20px;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  margin: -70px 0 0 -170px;*/
