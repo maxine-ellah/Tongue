@@ -21,6 +21,15 @@ body {
 #content img{
   width: 70%;
 }
+
+#english {
+  background-color: white;
+}
+
+#french {
+  background-color: white;
+}
+
 #nextWord {
   margin-top: 20px;
   background-color: white;
