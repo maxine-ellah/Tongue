@@ -1,7 +1,7 @@
 
-# tongue
+# Tongue
 
-language learning app to help new migrants practice pronounciation.
+A language learning app to help new migrants practice pronounciation.
 
 # App link
 
