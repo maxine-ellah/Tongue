@@ -1,34 +1,8 @@
 
 # tongue
 
-language learning app
+language learning app to help new migrants practice pronounciation.
 
-## how
+# App link
 
-### install
-
-```
-git clone https://github.com/maxine-ellah/tongue
-cd 
-npm install
-```
-
-## develop
-
-```
-npm start
-```
-
-browse to <http://localhost:9966/>.
-
-## test
-
-```
-npm test
-```
-
-## deploy
-
-```
-npm run deploy
-```
+[Tongue](https://tongue123.herokuapp.com)
