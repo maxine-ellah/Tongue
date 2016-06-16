@@ -1,34 +1,10 @@
 
-# tongue
+# Tongue
 
-language learning app
+_A language learning app to help new migrants practice pronunciation._
 
-## how
+<p align="center">
+  <img src="./images/tonguepic" alt="Sublime's custom image"/>
+</p>
 
-### install
-
-```
-git clone https://github.com/maxine-ellah/tongue
-cd 
-npm install
-```
-
-## develop
-
-```
-npm start
-```
-
-browse to <http://localhost:9966/>.
-
-## test
-
-```
-npm test
-```
-
-## deploy
-
-```
-npm run deploy
-```
+[Tongue](https://tongue123.herokuapp.com)
